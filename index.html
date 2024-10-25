@@ -161,12 +161,23 @@ h1, h2, h3, h4, p {
   text-shadow: 0 0 4px rgba(0, 0, 0, 0.7);
 }
 h1 {
-  font-size: 3.2vw;
+  font-size: 3.4em;
   letter-spacing: 3px;
 }
 p {
-  font-size: 2.2vmin;
+   font-size: 1.2em;
 }
+@media screen and (min-width: 700px) {
+  h1 {
+    font-size: 3.2vw;
+    letter-spacing: 3px;
+  }
+  p {
+    font-size: 2.2vmin;
+  }
+}
+
+
 .parallax {
   background-attachment: fixed;
 }
@@ -229,11 +240,7 @@ p {
         <h1>Route & Parkeren</h1>
         <h2> Fiets </h2>
         <p>
-        ↑
-        ↑
-        <br>
         De beste optie.
-        Drop hier je fiets!
         <br>
         Plenty fietsrekken bij ARTIS,
         neem even de moeite om je fiets in de rekken bij het parkeertereein te zetten
@@ -289,6 +296,9 @@ p {
           </div>
           <div class="carousel-item">
             <img src='milo-zwart-gat.jpg'>
+          </div>
+          <div class="carousel-item">
+            <img src='planetarium-concept-2024.png'>
           </div>
         </div>
         <button class="carousel-btn prev-btn">❮</button>
@@ -397,7 +407,7 @@ p {
         // Left Arrow key
         if (event.keyCode === 37) {
             event.preventDefault(); // Prevent default arrow key scrolling
-            currentSlide = (currentSlide - 1 + 3) % 3; // Wrap around to the first slide after the last
+            currentSlide = (currentSlide - 1 + 4) % 4; // Wrap around to the first slide after the last
             updateCarousel();
         }
 
@@ -410,7 +420,7 @@ p {
         // Up Arrow key
         if (event.keyCode === 39) {
             event.preventDefault(); // Prevent default arrow key scrolling
-            currentSlide = (currentSlide + 1) % 3; // Wrap around to the first slide after the last
+            currentSlide = (currentSlide + 1) % 4; // Wrap around to the first slide after the last
             updateCarousel();
         }
 
@@ -432,16 +442,14 @@ p {
     }
 
     nextBtn.addEventListener('click', () => {
-        currentSlide = (currentSlide + 1) % 3; // Wrap around to the first slide after the last
+        currentSlide = (currentSlide + 1) % 4; // Wrap around to the first slide after the last
         updateCarousel();
     });
 
     prevBtn.addEventListener('click', () => {
-        currentSlide = (currentSlide - 1) % 3; // Wrap around to the last slide if moving before the first
+        currentSlide = (currentSlide - 1) % 4; // Wrap around to the last slide if moving before the first
         updateCarousel();
     });
 </script>
-
 </body>
 </html>
-
