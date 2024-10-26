@@ -7,6 +7,24 @@
     <link rel="stylesheet" href="app.css">
 </head>
 <body>
+  <div id="contactgegevens">
+    <button id="showHideBtn">Contact</button>
+    <div id="showHide">
+    <span>tessa</span>.<span>weller</span>
+    <span>@gmail.com</span>
+    <br>
+    Milo:
+    <span>06</span>
+    -
+    <span>20438075</span>
+    <br>
+    Tessa:
+    <span>06</span>
+    -
+    <span>21156301</span>
+    </div>
+  </div>
+
   <div class=container>
     <section id=hero class="section parallax">
         <div>
@@ -273,6 +291,18 @@
         currentSlide = (currentSlide - 1) % 4; // Wrap around to the last slide if moving before the first
         updateCarousel();
     });
-</script>
+
+    var button = document.getElementById('showHideBtn'); // Assumes element with id='button'
+    button.onclick = function(event) {
+      event.preventDefault(); // Prevent default arrow key scrolling
+      var div = document.getElementById('showHide');
+      if (div.style.display !== 'none') {
+        div.style.display = 'none';
+      }
+      else {
+        div.style.display = 'block';
+      }
+    };
+  </script>
 </body>
 </html>
